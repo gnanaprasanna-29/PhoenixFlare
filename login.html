@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BizBoost | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="login-container">
+    <button class="back-btn" onclick="goBack()">← Back</button>
+
+    <h2 id="loginTitle">Login</h2>
+
+    <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Password</label>
+        <input type="password" id="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p class="switch">
+        Don’t have an account?
+        <span onclick="goToRegister()">Register</span>
+    </p>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

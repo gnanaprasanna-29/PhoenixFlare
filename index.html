@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BizBoost | Grow Your Business</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #0f3d2e;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #0f3d2e;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .login-btn {
+            background: #ffffff;
+            color: #0f3d2e;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .register-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .register-btn:hover {
+            background: white;
+            color: #0f3d2e;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0f3d2e 0%, #2e7d5e 50%, #4caf50 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .cta-btn {
+            margin-top: 20px;
+            padding: 14px 30px;
+            border: none;
+            background: #ffffff;
+            color: #0f3d2e;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+            background: #e8f5e9;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 30px;
+            width: 280px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .feature-card h3 {
+            color: #0f3d2e;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           NEW: CONNECT TALENT SECTION
+           ============================================ */
+        .connect-section {
+            padding: 80px 20px;
+            background: linear-gradient(to right, #ffffff, #f5f5f5);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: #0f3d2e;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .marketplace-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .marketplace-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marketplace-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #4caf50, #2e7d5e);
+        }
+
+        .marketplace-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+        }
+
+        .marketplace-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .marketplace-card h3 {
+            font-size: 24px;
+            color: #0f3d2e;
+            margin-bottom: 15px;
+        }
+
+        .marketplace-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .marketplace-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .marketplace-btn:hover {
+            background: #2e7d5e;
+            transform: translateX(5px);
+        }
+
+        /* ============================================
+           NEW: SERVICES SECTION
+           ============================================ */
+        .services-section {
+            padding: 80px 20px;
+            background: #0f3d2e;
+            color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.1);
+            padding: 35px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(76, 175, 80, 0.2);
+            transform: translateY(-8px);
+            border-color: rgba(76, 175, 80, 0.5);
+        }
+
+        .service-card .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #4caf50;
+        }
+
+        .service-card p {
+            color: #e8e8e8;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* ============================================
+           NEW: WHY CHOOSE SECTION
+           ============================================ */
+        .why-choose-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .why-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateX(5px);
+        }
+
+        .why-card .check-icon {
+            font-size: 28px;
+            color: #4caf50;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .why-card h4 {
+            color: #0f3d2e;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .why-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           NEW: CTA SECTION
+           ============================================ */
+        .cta-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #2e7d5e 0%, #4caf50 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary {
+            background: white;
+            color: #0f3d2e;
+        }
+
+        .cta-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: #0f3d2e;
+        }
+
+        /* ============================================
+           NEW: FOOTER
+           ============================================ */
+        .footer {
+            background: #0a2820;
+            color: #e8e8e8;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 61, 46, 0.6);
+            z-index: 200;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            padding: 30px;
+            width: 300px;
+            margin: 150px auto;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .modal-content button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            background: #4caf50;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            background: #388e3c;
+            transform: translateY(-2px);
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+            color: #0f3d2e;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .close:hover {
+            color: #4caf50;
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .marketplace-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-primary, .cta-secondary {
+                width: 100%;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h2 class="logo">BizBoost</h2>
+        <div class="nav-buttons">
+            <button class="login-btn" onclick="showLoginOptions()">Login</button>
+            <button class="register-btn" onclick="showRegisterOptions()">Register</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Grow Your Business. Earn With Your Skills.</h1>
+            <p>One platform for small businesses to manage social media & designs, and for students/freelancers to earn money.</p>
+            <button class="cta-btn" onclick="showLoginOptions()">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>📱 Social Media Management</h3>
+            <p>Manage Instagram & Facebook pages easily.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🎨 Design Services</h3>
+            <p>Posters, logos, banners, and more.</p>
+        </div>
+        <div class="feature-card">
+            <h3>💼 Freelancer Earnings</h3>
+            <p>Students earn by completing real jobs.</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         NEW: CONNECT TALENT SECTION
+         ============================================ -->
+    <section class="connect-section">
+        <h2 class="section-title">Connect Talent with Opportunity</h2>
+        <p class="section-subtitle">The marketplace where small businesses find creative freelancers for Instagram management, banner design, poster making, and social media promotions.</p>
+
+        <div class="marketplace-grid">
+            <div class="marketplace-card">
+                <div class="marketplace-icon">👨‍💻</div>
+                <h3>Find Work as a Freelancer</h3>
+                <p>Showcase your skills, build your portfolio, and earn money by completing real projects from verified businesses. Start your freelancing journey today.</p>
+                <button class="marketplace-btn" onclick="goToLogin('freelancer')">Start Freelancing</button>
+            </div>
+
+            <div class="marketplace-card">
+                <div class="marketplace-icon">🏢</div>
+                <h3>Hire Creative Talent</h3>
+                <p>Access a pool of skilled freelancers ready to elevate your brand. Post your project and get matched with the perfect creative professional.</p>
+                <button class="marketplace-btn" onclick="goToLogin('business')">Hire Talent</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         NEW: SERVICES SECTION
+         ============================================ -->
+    <section class="services-section">
+        <h2 class="section-title" style="color: white; margin-bottom: 50px;">Our Services</h2>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h4>Social Media Management</h4>
+                <p>Expert freelancers ready to manage your Instagram, create engaging content, and grow your online presence. From posting schedules to community engagement, we've got you covered.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h4>Creative Design</h4>
+                <p>Professional banners, posters, logos, and promotional materials designed specifically for your brand. Stand out from the competition with custom-designed graphics.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h4>Marketing Promotions</h4>
+                <p>Strategic promotional campaigns and content creation to boost your business visibility. Reach your target audience and increase conversions with data-driven strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         NEW: WHY CHOOSE SECTION
+         ============================================ -->
+    <section class="why-choose-section">
+        <h2 class="section-title">Why Choose BizBoost?</h2>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="check-icon">✓</div>
+                <div>
+                    <h4>Vetted Talent</h4>
+                    <p>Connect with skilled student freelancers eager to build their portfolios and deliver quality work.</p>
+                </div>
+            </div>
+
+            <div class="why-card">
+                <div class="check-icon">🔒</div>
+                <div>
+                    <h4>Secure Payments</h4>
+                    <p>Safe and transparent payment system protecting both freelancers and businesses every step of the way.</p>
+                </div>
+            </div>
+
+            <div class="why-card">
+                <div class="check-icon">⭐</div>
+                <div>
+                    <h4>Quality Work</h4>
+                    <p>Professional results delivered on time, every time. We guarantee satisfaction or your money back.</p>
+                </div>
+            </div>
+
+            <div class="why-card">
+                <div class="check-icon">⚡</div>
+                <div>
+                    <h4>Quick Turnaround</h4>
+                    <p>Fast project completion without compromising on quality. Get your projects done when you need them.</p>
+                </div>
+            </div>
+
+            <div class="why-card">
+                <div class="check-icon">📊</div>
+                <div>
+                    <h4>Transparent Pricing</h4>
+                    <p>No hidden charges, no surprises. Know exactly what you're paying for upfront.</p>
+                </div>
+            </div>
+
+            <div class="why-card">
+                <div class="check-icon">🤝</div>
+                <div>
+                    <h4>24/7 Support</h4>
+                    <p>Our dedicated support team is always here to help resolve issues and answer questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         NEW: FINAL CTA SECTION
+         ============================================ -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Join thousands of businesses and freelancers already using BizBoost</p>
+        <div class="cta-buttons">
+            <button class="cta-primary" onclick="showRegisterOptions()">Sign Up Now</button>
+            <button class="cta-secondary" onclick="showLoginOptions()">Already a Member? Login</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 BizBoost. All rights reserved. Empowering businesses and freelancers.</p>
+    </footer>
+
+    <!-- Role Selection Modal -->
+    <div id="roleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Select Role</h2>
+            <button id="businessBtn"></button>
+            <button id="freelancerBtn"></button>
+        </div>
+    </div>
+
+    <script>
+        function showLoginOptions() {
+            document.getElementById("roleModal").style.display = "block";
+            document.getElementById("modalTitle").innerText = "Login as";
+            document.getElementById("businessBtn").innerText = "Business Login";
+            document.getElementById("freelancerBtn").innerText = "Freelancer Login";
+            document.getElementById("businessBtn").onclick = () => goToLogin("business");
+            document.getElementById("freelancerBtn").onclick = () => goToLogin("freelancer");
+        }
+
+        function showRegisterOptions() {
+            document.getElementById("roleModal").style.display = "block";
+            document.getElementById("modalTitle").innerText = "Register as";
+            document.getElementById("businessBtn").innerText = "Business Register";
+            document.getElementById("freelancerBtn").innerText = "Freelancer Register";
+            document.getElementById("businessBtn").onclick = () => goToRegister("business");
+            document.getElementById("freelancerBtn").onclick = () => goToRegister("freelancer");
+        }
+
+        function closeModal() {
+            document.getElementById("roleModal").style.display = "none";
+        }
+
+        function goToLogin(role) {
+            localStorage.setItem("bizboost_role", role);
+            window.location.href = "login.html";
+        }
+
+        function goToRegister(role) {
+            localStorage.setItem("bizboost_role", role);
+            window.location.href = "register.html";
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            let modal = document.getElementById("roleModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

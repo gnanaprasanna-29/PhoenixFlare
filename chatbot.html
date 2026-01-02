@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BizBoost | Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <h2 class="logo">BizBoost Chatbot</h2>
+    <button class="back-btn" onclick="goBack()">← Back</button>
+</header>
+
+<main class="container">
+
+    <div id="chatBox" class="card" style="height:420px; overflow-y:auto;">
+        <p><strong>Bot:</strong> Hi 👋 I can help you with jobs, hiring, and applications.</p>
+    </div>
+
+    <div style="display:flex; gap:10px; margin-top:15px;">
+        <input id="userInput" placeholder="Type your message..." style="flex:1;">
+        <button class="new-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+</main>
+
+<script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BizBoost | Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="login-container">
+    <button class="back-btn" onclick="goBack()">← Back</button>
+
+    <h2 id="registerTitle">Register</h2>
+
+    <form id="registerForm">
+        <label>Name</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Password</label>
+        <input type="password" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p class="switch">
+        Already have an account?
+        <span onclick="goToLogin()">Login</span>
+    </p>
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>

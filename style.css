@@ -1,0 +1,298 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #0f3d2e;
+}
+
+/* ===============================
+   NAVBAR / TOPBAR
+================================ */
+.navbar,
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #0f3d2e;
+    color: #ffffff;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.top-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-btn,
+.logout-btn {
+    background: #ffffff;
+    color: #0f3d2e;
+}
+
+.register-btn {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.new-btn {
+    background: #4caf50;
+    color: #ffffff;
+}
+
+.new-btn:disabled {
+    background: #999999;
+    cursor: not-allowed;
+}
+
+.cta-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ffffff;
+    color: #0f3d2e;
+    font-size: 16px;
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #0f3d2e, #4caf50);
+    color: #ffffff;
+}
+
+.hero h1 {
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+/* ===============================
+   FEATURES
+================================ */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+    background: #e8f5e9;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 25px;
+    width: 260px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   MODAL
+================================ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 61, 46, 0.6);
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    width: 300px;
+    margin: 150px auto;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.modal-content button {
+    width: 100%;
+    margin-top: 10px;
+    background: #4caf50;
+    color: #ffffff;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ===============================
+   LOGIN & REGISTER
+================================ */
+.login-container {
+    background: #ffffff;
+    padding: 30px;
+    width: 320px;
+    margin: 80px auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.switch {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.switch span {
+    color: #4caf50;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    color: #0f3d2e;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   DASHBOARD LAYOUT
+================================ */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   BUSINESS DASHBOARD
+================================ */
+#myJobsSection h2,
+#postJobSection h2 {
+    margin-bottom: 15px;
+}
+
+/* ===============================
+   FREELANCER DASHBOARD
+================================ */
+#pageTitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+   TABLE STYLES
+================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background: #e8f5e9;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.empty {
+    text-align: center;
+    color: gray;
+    padding: 15px;
+}
+
+/* ===============================
+   RESPONSIVE (BASIC)
+================================ */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar,
+    .topbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+}
+
+
+.back-btn {
+    background-color: #0b5d1e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.back-btn:hover {
+    background-color: #0f7a2b;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BizBoost | Business Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <h2 class="logo">BizBoost</h2>
+      <div class="top-actions">
+        <button class="new-btn" onclick="openChatbot()">Chat</button>
+
+        <button class="new-btn" onclick="showJobForm()">Post New Job</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main class="container">
+      <!-- MY JOBS SECTION -->
+      <section id="myJobsSection" class="card">
+        <h2>My Jobs</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Budget</th>
+              <th>Deadline</th>
+              <th>Applicants</th>
+            </tr>
+          </thead>
+          <tbody id="jobsTable">
+            <tr>
+              <td colspan="5" class="empty">No jobs posted yet</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- POST NEW JOB SECTION -->
+      <section id="postJobSection" class="card" style="display: none">
+        <button class="back-btn" onclick="showMyJobs()">← Back</button>
+
+        <h2>Post New Job</h2>
+
+        <form id="jobForm">
+          <label>Job Title</label>
+          <input type="text" id="jobTitle" required />
+
+          <label>Category</label>
+          <select id="jobCategory" required>
+            <option value="">Select Category</option>
+            <option>Instagram Management</option>
+            <option>Banner Design</option>
+            <option>Poster Design</option>
+            <option>Logo Design</option>
+            <option>Social Media Promotion</option>
+            <option>Video Editing</option>
+            <option>Content Creation</option>
+          </select>
+
+          <label>Description</label>
+          <textarea id="jobDescription"></textarea>
+
+          <label>Budget</label>
+          <input type="number" id="jobBudget" required />
+
+          <label>Deadline</label>
+          <input type="date" id="jobDeadline" required />
+
+          <button type="submit" class="new-btn">Post Job</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- SCRIPT -->
+    <script src="business-dashboard.js"></script>
+  </body>
+</html>
