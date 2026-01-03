@@ -122,5 +122,10 @@ window.addEventListener('click', function (e) {
     if (e.target === applyModal) closeApplyForm();
 });
 
+function openFeedback() {
+  window.location.href = "feedback.html";
+}
+
+
 // Initial render
 renderJobs();
